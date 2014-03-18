@@ -145,7 +145,7 @@ array_insert($GLOBALS['TL_DCA']['tl_module']['fields'] , 2, array
 	'cl_set_overLayID'=> array
 	(
 	    'label' => &$GLOBALS['TL_LANG']['tl_module']['cl_set_overLayID'],
-	    'default' => 'overLay',
+	    'default' => 'srl_overLay',
 	    'exclude' => true,
 	    'inputType' => 'text',
 	    'eval' => array('tl_class'=>'w50'),
@@ -154,7 +154,7 @@ array_insert($GLOBALS['TL_DCA']['tl_module']['fields'] , 2, array
 	'cl_set_LayerID'=> array
 	(
 	    'label' => &$GLOBALS['TL_LANG']['tl_module']['cl_set_LayerID'],
-	    'default' => 'layer',
+	    'default' => 'srl_layer',
 	    'exclude' => true,
 	    'inputType' => 'text',
 	    'eval' => array('tl_class'=>'w50'),
@@ -170,7 +170,7 @@ array_insert($GLOBALS['TL_DCA']['tl_module']['fields'] , 2, array
 	'cl_set_closeID'=> array
 	(
 	    'label' => &$GLOBALS['TL_LANG']['tl_module']['cl_set_closeID'],
-	    'default' => 'closeBtn',
+	    'default' => 'srl_closeBtn',
 	    'exclude' => true,
 	    'inputType' => 'text',
 	    'eval' => array('tl_class'=>'w50'),
@@ -178,7 +178,7 @@ array_insert($GLOBALS['TL_DCA']['tl_module']['fields'] , 2, array
 	'cl_set_closeClass'=> array
 	(
 	    'label' => &$GLOBALS['TL_LANG']['tl_module']['cl_set_closeClass'],
-	    'default' => 'closer',
+	    'default' => 'srl_closer',
 	    'exclude' => true,
 	    'inputType' => 'text',
 	    'eval' => array('tl_class'=>'w50'),
