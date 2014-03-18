@@ -16,8 +16,11 @@
     height:460px;
     width:790px;
     display:none;
+    overflow: auto;
     background-color: #fff;
-    padding:20px;
+    -webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
 }
 
 #closeBtn {
@@ -26,8 +29,13 @@
 	top:10px;
 	width: 21px;
 	height:21px;
-	background: transparent url('../images/layer_CloseBtn.png') no-repeat center;
+	background: transparent url("../images/layer_CloseBtn.png") no-repeat center;
 	z-index: 10000;
 	text-indent:-9999px;
 	cursor: pointer;
+}
+.layer_content{
+	position:relative;
+	overflow: auto;
+    padding:20px;
 }
