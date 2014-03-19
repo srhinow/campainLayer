@@ -20,17 +20,14 @@
  * @filesource
 
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'] = array_merge( $GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'], array('cl_set_cookie', 'cl_set_expertoptions'));
+$GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'] = array_merge( $GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'], array('cl_set_cookie', 'cl_set_jsoptions'));
 
-// $GLOBALS['TL_DCA']['tl_module']['palettes']['campain_layer']  = 'name,type;cl_content,cl_option_layerwidth,cl_option_layerheight,cl_template,cl_css_file;cl_no_param,cl_substr,cl_set_mkLinkEvents,cl_start,cl_stop;cl_set_session;cl_set_cookie,cl_cookie_name,cl_cookie_dauer;
-// {expert_legend:hide},cl_set_drawOverLay,cl_set_overLayID,cl_set_drawLayer,cl_set_LayerID,cl_set_drawCloseBtn,cl_set_closeID,cl_set_closeClass,cl_set_overLayOpacity,cl_set_closePerEsc,cl_set_closePerLayerClick,cl_set_drawLayerCenterX,cl_set_drawLayerCenterY,cl_option_other';
-
-$GLOBALS['TL_DCA']['tl_module']['palettes']['campain_layer']  = 'name,type;{layer_legend},cl_content,cl_option_layerwidth,cl_option_layerheight;{htmlcss_legend},cl_template,cl_css_file;{show_legend},cl_no_param,cl_set_mkLinkEvents,cl_substr,cl_delay,cl_start,cl_stop;{session_legend},cl_set_session;{cookie_legend},cl_set_cookie;{expert_legend:hide},cl_set_expertoptions';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['campain_layer']  = 'name,type;{layer_legend},cl_content,cl_option_layerwidth,cl_option_layerheight;{htmlcss_legend},cl_template,cl_css_file;{show_legend},cl_no_param,cl_set_mkLinkEvents,cl_substr,cl_delay,cl_start,cl_stop;{session_legend},cl_set_session;{cookie_legend},cl_set_cookie;{expert_legend:hide},cl_hideOverlay;{js_legend:hide},cl_set_jsoptions';
 
 $GLOBALS['TL_DCA']['tl_module']['subpalettes'] = array_merge($GLOBALS['TL_DCA']['tl_module']['subpalettes'], 
 	array(
 		'cl_set_cookie' => 'cl_cookie_name,cl_cookie_dauer',
-		'cl_set_expertoptions' => 'cl_set_overLayID,cl_set_LayerID,cl_set_closeID,cl_set_closeClass,cl_set_overLayOpacity,cl_set_duration,cl_set_closePerEsc,cl_set_closePerLayerClick,cl_set_drawLayerCenterX,cl_set_drawLayerCenterY,cl_option_other'
+		'cl_set_jsoptions' => 'cl_set_overLayID,cl_set_LayerID,cl_set_closeID,cl_set_closeClass,cl_set_overLayOpacity,cl_set_duration,cl_set_closePerEsc,cl_set_closePerLayerClick,cl_set_drawLayerCenterX,cl_set_drawLayerCenterY,cl_option_other'
 	)
 );
 
@@ -134,9 +131,18 @@ array_insert($GLOBALS['TL_DCA']['tl_module']['fields'] , 2, array
 	    'inputType' => 'text',
 	    'eval' => array('mandatory'=>true,'maxlength'=>55,'tl_class'=>'w50','rgxp'=>'digit'),
 	),
-	'cl_set_expertoptions' 	=> array
+	'cl_hideOverlay' => array
 	(
-	    'label'         => &$GLOBALS['TL_LANG']['tl_module']['cl_set_expertoptions'],
+	    'label'       	=> &$GLOBALS['TL_LANG']['tl_module']['cl_hideOverlay'],
+	    'exclude'     	=> true,
+	    'default'	  	=> '',
+	    'inputType'   	=> 'checkbox',
+	    'eval' 			=> array('tl_class'=>'w50'),
+	    'sql'			=> "char(1) NOT NULL default ''"
+	),
+	'cl_set_jsoptions' 	=> array
+	(
+	    'label'         => &$GLOBALS['TL_LANG']['tl_module']['cl_set_jsoptions'],
 	    'exclude'       => true,
 	    'inputType'     => 'checkbox',
 	    'eval'          => array('submitOnChange'=>true),
@@ -150,7 +156,14 @@ array_insert($GLOBALS['TL_DCA']['tl_module']['fields'] , 2, array
 	    'inputType' => 'text',
 	    'eval' => array('tl_class'=>'w50'),
 	),
-
+	'cl_hideOverlay' => array
+	(
+	    'label'       => &$GLOBALS['TL_LANG']['tl_module']['cl_hideOverlay'],
+	    'exclude'     => true,
+	    'default'	  => '',
+	    'inputType'   => 'checkbox',
+	    'eval' => array('tl_class'=>'w50'),
+	),
 	'cl_set_LayerID'=> array
 	(
 	    'label' => &$GLOBALS['TL_LANG']['tl_module']['cl_set_LayerID'],
@@ -159,14 +172,7 @@ array_insert($GLOBALS['TL_DCA']['tl_module']['fields'] , 2, array
 	    'inputType' => 'text',
 	    'eval' => array('tl_class'=>'w50'),
 	),
-	'cl_set_drawCloseBtn' => array
-	(
-	    'label'       => &$GLOBALS['TL_LANG']['tl_module']['cl_set_drawCloseBtn'],
-	    'exclude'     => true,
-	    'default'	  => '',
-	    'inputType'   => 'checkbox',
-	    'eval' => array('tl_class'=>'w50'),
-	),
+
 	'cl_set_closeID'=> array
 	(
 	    'label' => &$GLOBALS['TL_LANG']['tl_module']['cl_set_closeID'],

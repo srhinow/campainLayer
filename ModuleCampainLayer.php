@@ -130,6 +130,7 @@ class ModuleCampainLayer extends Module
 			if(!$this->Session->get($this->cl_session_name))
 			{
 				$this->Session->set($this->cl_session_name,'1');
+
 			}else $this->show = false;
 
 		}
@@ -143,7 +144,7 @@ class ModuleCampainLayer extends Module
 			if(is_numeric($this->cl_option_layerheight)) $this->optionsArr[] = 'layerHeight:'.$this->cl_option_layerheight;
 
 			//expert options
-			if($this->cl_set_expertoptions == 1)
+			if($this->cl_set_jsoptions == 1)
 			{
 				if(strlen($this->cl_set_overLayID)) $this->optionsArr[] = "overLayID:'".$this->cl_set_overLayID."'";
 				if(strlen($this->cl_set_layerID)) $this->optionsArr[] = "overLayID:'".$this->cl_set_layerID."'";
@@ -155,7 +156,6 @@ class ModuleCampainLayer extends Module
 		        if(!$this->cl_set_closePerLayerClick) $this->optionsArr[] = 'closePerLayerClick:false';
 		        if(!$this->cl_set_drawLayerCenterX) $this->optionsArr[] = 'drawLayerCenterX:false';
 		        if(!$this->cl_set_drawLayerCenterY) $this->optionsArr[] = 'drawLayerCenterY:false';
-
 			}
 
 	        $jsOptions = implode(', ',$this->optionsArr);
@@ -174,6 +174,7 @@ class ModuleCampainLayer extends Module
 
 			$this->Template->content = $this->cl_content;
 			$this->Template->showLayerHtml = $this->show;
+			$this->Template->hideOverlay = ($this->cl_hideOverlay == 1) ? true : false;
 	   }
 
 	}

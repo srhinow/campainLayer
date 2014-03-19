@@ -26,8 +26,9 @@ $GLOBALS['TL_LANG']['tl_module']['cl_cookie_name']         = array('Cookie-Name'
 $GLOBALS['TL_LANG']['tl_module']['cl_cookie_dauer']         = array('Cookie-Dauer', 'in Sekunden. Standart 3600 = 1Stunde.');
 $GLOBALS['TL_LANG']['tl_module']['cl_start']       = array('Anzeigen ab', 'Den Layer erst ab diesem Tag auf der Webseite anzeigen.');
 $GLOBALS['TL_LANG']['tl_module']['cl_stop']        = array('Anzeigen bis', 'Den Layer nur bis zu diesem Tag auf der Webseite anzeigen.');
+$GLOBALS['TL_LANG']['tl_module']['cl_hideOverlay']        = array('Overlay nicht anzeigen','den Bereich um den Layer der sich über die ganze Seite legt, nicht anzeigen.');
 
-$GLOBALS['TL_LANG']['tl_module']['cl_set_expertoptions']        = array('Experten-Einstellungen','Hier können die Standartwerte angepasst werden.');
+$GLOBALS['TL_LANG']['tl_module']['cl_set_jsoptions']        = array('Javascript-Einstellungen bearbeiten','Hier können die Standartwerte angepasst werden.');
 $GLOBALS['TL_LANG']['tl_module']['cl_set_overLayID']        = array('OverLay-ID','die ID des Overlay-Bereiches');
 $GLOBALS['TL_LANG']['tl_module']['cl_set_LayerID']        = array('Layer-ID','die ID des Layer-Bereiches');
 $GLOBALS['TL_LANG']['tl_module']['cl_set_closeID']        = array('Schließen-Button-ID','die ID des Schließen-Button-Bereiches');
@@ -46,3 +47,4 @@ $GLOBALS['TL_LANG']['tl_module']['htmlcss_legend'] = 'Anpassung der CSS-, und Te
 $GLOBALS['TL_LANG']['tl_module']['show_legend'] = 'Sichtbarkeits-Einstellungen';
 $GLOBALS['TL_LANG']['tl_module']['session_legend'] = 'Sitzungs-Cookie (Session)';
 $GLOBALS['TL_LANG']['tl_module']['cookie_legend'] = 'Domain-Cookie (Cookie)';
+$GLOBALS['TL_LANG']['tl_module']['js_legend'] = 'Javascript-Einstellungen';

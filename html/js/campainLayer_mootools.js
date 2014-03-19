@@ -182,24 +182,28 @@
 
 	close: function()
 	{
-	   $(this.layerID).tween('opacity',0).setStyle('display', 'none');
-	   $(this.overLayID).tween('opacity',0).setStyle('display', 'none');
+		if($(this.layerID))$(this.layerID).tween('opacity',0).setStyle('display', 'none');
+		if($(this.overLayID)) $(this.overLayID).tween('opacity',0).setStyle('display', 'none');
 	},
 
 	open: function(el)
 	{
-	    $(this.layerID).set('tween',{
-	    		duration: this.duration,
-				transition: Fx.Transitions.Quad.easeIn,
-	    });
-		$(this.layerID).setStyle('display', 'block').tween('opacity',1);
-
-	    $(this.overLayID).set('tween',{
-	    		duration: this.duration,
-				transition: Fx.Transitions.Quad.easeIn,
-	    });
-		$(this.overLayID).setStyle('display', 'block').tween('opacity',this.overLayOpacity);
-
+	    if($(this.layerID))
+    	{
+			$(this.layerID).set('tween',{
+					duration: this.duration,
+					transition: Fx.Transitions.Quad.easeIn,
+			});
+			$(this.layerID).setStyle('display', 'block').tween('opacity',1);
+		}
+	    if($(this.overLayID))
+    	{
+			$(this.overLayID).set('tween',{
+					duration: this.duration,
+					transition: Fx.Transitions.Quad.easeIn,
+			});
+			$(this.overLayID).setStyle('display', 'block').tween('opacity',this.overLayOpacity);
+		}
 	}
 
 } );
